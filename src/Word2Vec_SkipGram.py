@@ -96,11 +96,13 @@ class Word2VecSkipGram(object):
                         propagation[word.index(1)] for word in word_column_index
                     ]) + len(word_column_index) * np.log(np.sum(np.exp(propagation)))
             print("Epoch value: {} and Loss value: {}".format(i, self.network_loss_rate))
-            plt.plot(self.embedding_matrix, "go")
-            plt.plot(self.context_matrix, "ro")
-            plt.xlabel("Word Embedding")
-            plt.ylabel("Vector Weight")
-            plt.show()
+
+            # For Testing and visualization
+            # plt.plot(self.embedding_matrix, "go")
+            # plt.plot(self.context_matrix, "ro")
+            # plt.xlabel("Word Embedding")
+            # plt.ylabel("Vector Weight")
+            # plt.show()
 
     def convert_word_vector(self, phoneme):
         phoneme = self.word_index[phoneme]
